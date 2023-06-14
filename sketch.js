@@ -12,6 +12,7 @@ let c5 = "#4D4D4D";
 let c6 = "#303030";
 let c7 = "#0a0a0a";
 let cP = "rgba(10, 10, 10,0.8)";
+
 function setup() {
   createCanvas(512, 512);
   frameRate(3);
