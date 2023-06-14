@@ -1,6 +1,8 @@
+// TAMAÑO Y COLOR DE "PIXEL"
 let pSize = 8;
 let pixel = 0;
 let pixelfondo = 0;
+// ANIMACIÓN
 let contador = 0;
 let paleta = true;
 // COLORES
@@ -12,7 +14,6 @@ let c5 = "#4D4D4D";
 let c6 = "#303030";
 let c7 = "#0a0a0a";
 let cP = "rgba(10, 10, 10,0.8)";
-
 function setup() {
   createCanvas(512, 512);
   frameRate(3);
@@ -31,7 +32,7 @@ function draw() {
     c6 = "#303030";
     c7 = "#0a0a0a";
     cP = "rgba(10, 10, 10,0.8)";
-  } else{
+  } else {
     c1 = "#737373";
     c2 = "#303030";
     c3 = "#4D4D4D";
@@ -43,8 +44,8 @@ function draw() {
   }
   // CAPA DE FONDO
   push();
-  for (let x = 0; x < width; x += pSize*2) {
-    for (let y = 0; y < height; y += pSize*2) {
+  for (let x = 0; x < width; x += pSize * 2) {
+    for (let y = 0; y < height; y += pSize * 2) {
       noStroke();
       if (random() > 0.5) {
         pixelfondo = c1;
@@ -52,18 +53,12 @@ function draw() {
         pixelfondo = c2;
       }
       fill(pixelfondo);
-      ellipse(x, y, pSize*2);
-      ellipse(x + 6, y, pSize*2);
-      ellipse(x, y + 6, pSize*2);
+      ellipse(x, y, pSize * 2);
+      ellipse(x + 6, y, pSize * 2);
+      ellipse(x, y + 6, pSize * 2);
     }
   }
   pop();
-  // CAPA MEDIA
-  if (mouseIsPressed || keyIsPressed){
-    pSize=16;
-  } else{
-    pSize=8;
-  }
   // CAPA DE PIXELES
   push();
   for (let x = 0; x < width; x += pSize) {
@@ -79,4 +74,14 @@ function draw() {
     }
   }
   pop();
+  // CAMBIO DE TAMAÑO
+  if (mouseIsPressed || keyIsPressed) {
+    pSize = 16;
+  } else {
+    pSize = 8;
+  }
+  // ESCONDER MENU
+  document.oncontextmenu = function () {
+    return false;
+  }
 }
