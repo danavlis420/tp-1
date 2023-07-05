@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background("#0a0a0a");
   // CAPA DE FONDO
   push();
   for (let x = 0; x < width; x += pSize * 2) {
